@@ -5,7 +5,7 @@ var food;
 function setup() {
   createCanvas(400,400);
   s = new Snake();
-  frameRate(10);
+  frameRate(8);
   picklocation();
 }
 function picklocation(){
@@ -16,12 +16,15 @@ function picklocation(){
 }
 function draw() {
   background(50);
-  s.update();
-  s.show();
+
   if (s.eat(food)) {
     console.log("truee")
     picklocation();
   };
+
+  s.death();
+  s.update();
+  s.show();
  
 
   fill(255,0,100);
@@ -40,5 +43,9 @@ function keyPressed(){
   }
   else if(keyCode === LEFT_ARROW){
     s.dir(-1,0);
+  }
+
+  function mousePresses(){
+       
   }
 }
