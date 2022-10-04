@@ -20,6 +20,7 @@ function draw() {
   s.show();
   if (s.eat(food)) {
     console.log("truee")
+    picklocation();
   };
  
 
